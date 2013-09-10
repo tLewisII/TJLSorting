@@ -48,19 +48,19 @@
     return [NSArray arrayWithArray:sortedArray];
 }
 
--(NSArray *)insetionSort:(NSArray *)arr {
-    NSMutableArray *array = [NSMutableArray arrayWithArray:arr];
+-(NSArray *)insetionSort:(NSArray *)array {
+    NSMutableArray *sorting = [NSMutableArray arrayWithArray:array];
     NSInteger i;
-    for(NSInteger j = 1; j< array.count; j++) {
-        id key = [array objectAtIndex:j];
+    for(NSInteger j = 1; j< sorting.count; j++) {
+        id key = [sorting objectAtIndex:j];
         i = j - 1;
-        while (i >= 0 && [[array objectAtIndex:i] compare:key] != NSOrderedAscending) {
-            [array replaceObjectAtIndex:i + 1 withObject:[array objectAtIndex:i]];
-            i= i - 1;
+        while (i >= 0 && [[sorting objectAtIndex:i] compare:key] != NSOrderedAscending) {
+            [sorting replaceObjectAtIndex:i + 1 withObject:[sorting objectAtIndex:i]];
+            i = i - 1;
         }
-        [array replaceObjectAtIndex:i + 1 withObject:key];
+        [sorting replaceObjectAtIndex:i + 1 withObject:key];
     }
-    return  [NSArray arrayWithArray:array];
+    return  [NSArray arrayWithArray:sorting];
 }
 
 -(NSArray *)mergeSort:(NSArray *)array {
@@ -71,16 +71,16 @@
     NSRange right = NSMakeRange(middle, (array.count - middle));
     NSArray *rightArr = [array subarrayWithRange:right];
     NSArray *leftArr = [array subarrayWithRange:left];
-    return [self merge:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]];
+    return [self mergeLeft:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]];
 }
 
--(NSArray *)merge:(NSArray *)leftArray andRight:(NSArray *)rightArray {
+-(NSArray *)mergeLeft:(NSArray *)leftArray andRight:(NSArray *)rightArray {
     NSMutableArray *result = [NSMutableArray new];
     NSInteger right = 0;
     NSInteger left = 0;
     
     while (left < leftArray.count && right < rightArray.count) {
-        if ([[leftArray objectAtIndex:left] compare:[rightArray objectAtIndex:right]] != NSOrderedDescending){
+        if ([[leftArray objectAtIndex:left] compare:[rightArray objectAtIndex:right]] != NSOrderedDescending) {
             [result addObject:[leftArray objectAtIndex:left++]];
         }
         else {
