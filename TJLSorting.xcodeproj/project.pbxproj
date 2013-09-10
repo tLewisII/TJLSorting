@@ -55,8 +55,8 @@
 		DB58366517DE3D33006B062E /* TJLSortingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TJLSortingTests-Info.plist"; sourceTree = "<group>"; };
 		DB58366717DE3D33006B062E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB58366917DE3D33006B062E /* TJLSortingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLSortingTests.m; sourceTree = "<group>"; };
-		DB58367317DE3D55006B062E /* TJLSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLSorter.h; sourceTree = "<group>"; };
-		DB58367417DE3D55006B062E /* TJLSorter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLSorter.m; sourceTree = "<group>"; };
+		DB58367317DE3D55006B062E /* TJLSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TJLSorter.h; path = Source/TJLSorter.h; sourceTree = "<group>"; };
+		DB58367417DE3D55006B062E /* TJLSorter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TJLSorter.m; path = Source/TJLSorter.m; sourceTree = "<group>"; };
 		DB58367617DE53A2006B062E /* TJLSortingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLSortingController.h; sourceTree = "<group>"; };
 		DB58367717DE53A2006B062E /* TJLSortingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLSortingController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,17 +118,12 @@
 		DB58364417DE3D33006B062E /* TJLSorting */ = {
 			isa = PBXGroup;
 			children = (
-				DB58364D17DE3D33006B062E /* TJLAppDelegate.h */,
-				DB58364E17DE3D33006B062E /* TJLAppDelegate.m */,
-				DB58365017DE3D33006B062E /* Main.storyboard */,
-				DB58365317DE3D33006B062E /* TJLViewController.h */,
-				DB58365417DE3D33006B062E /* TJLViewController.m */,
+				DBBF728917DEAA7E00072989 /* App delegate & Storyboard */,
+				DBBF728A17DEAA9200072989 /* RootVC */,
 				DB58365617DE3D33006B062E /* Images.xcassets */,
 				DB58364517DE3D33006B062E /* Supporting Files */,
-				DB58367317DE3D55006B062E /* TJLSorter.h */,
-				DB58367417DE3D55006B062E /* TJLSorter.m */,
-				DB58367617DE53A2006B062E /* TJLSortingController.h */,
-				DB58367717DE53A2006B062E /* TJLSortingController.m */,
+				DBBF728817DEAA6F00072989 /* Source */,
+				DBBF728B17DEAAA000072989 /* DetailVC */,
 			);
 			path = TJLSorting;
 			sourceTree = "<group>";
@@ -160,6 +155,43 @@
 				DB58366617DE3D33006B062E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBBF728817DEAA6F00072989 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DB58367317DE3D55006B062E /* TJLSorter.h */,
+				DB58367417DE3D55006B062E /* TJLSorter.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		DBBF728917DEAA7E00072989 /* App delegate & Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DB58364D17DE3D33006B062E /* TJLAppDelegate.h */,
+				DB58364E17DE3D33006B062E /* TJLAppDelegate.m */,
+				DB58365017DE3D33006B062E /* Main.storyboard */,
+			);
+			name = "App delegate & Storyboard";
+			sourceTree = "<group>";
+		};
+		DBBF728A17DEAA9200072989 /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				DB58365317DE3D33006B062E /* TJLViewController.h */,
+				DB58365417DE3D33006B062E /* TJLViewController.m */,
+			);
+			name = RootVC;
+			sourceTree = "<group>";
+		};
+		DBBF728B17DEAAA000072989 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				DB58367617DE53A2006B062E /* TJLSortingController.h */,
+				DB58367717DE53A2006B062E /* TJLSortingController.m */,
+			);
+			name = DetailVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +499,7 @@
 				DB58366F17DE3D33006B062E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB58367017DE3D33006B062E /* Build configuration list for PBXNativeTarget "TJLSortingTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +508,7 @@
 				DB58367217DE3D33006B062E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
