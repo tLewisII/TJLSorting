@@ -11,5 +11,5 @@
 @interface TJLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
++ (NSMutableArray *)sharedUnsortedArrayWithElements:(NSUInteger)elements;
 @end

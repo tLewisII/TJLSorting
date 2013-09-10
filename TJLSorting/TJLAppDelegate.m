@@ -9,7 +9,18 @@
 #import "TJLAppDelegate.h"
 
 @implementation TJLAppDelegate
-
++ (NSMutableArray *)sharedUnsortedArrayWithElements:(NSUInteger)elements {
+    static NSMutableArray *_sharedArray = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedArray = [[NSMutableArray alloc]initWithCapacity:elements];
+        for(NSUInteger i = 0; i < elements; i++) {
+            _sharedArray[i] = [NSNumber numberWithUnsignedLong:arc4random_uniform(elements)];
+        }
+    });
+    
+    return _sharedArray;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.

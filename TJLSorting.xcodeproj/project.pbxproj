@@ -21,6 +21,8 @@
 		DB58366017DE3D33006B062E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58364217DE3D33006B062E /* UIKit.framework */; };
 		DB58366817DE3D33006B062E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB58366617DE3D33006B062E /* InfoPlist.strings */; };
 		DB58366A17DE3D33006B062E /* TJLSortingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58366917DE3D33006B062E /* TJLSortingTests.m */; };
+		DB58367517DE3D55006B062E /* TJLSorter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58367417DE3D55006B062E /* TJLSorter.m */; };
+		DB58367817DE53A2006B062E /* TJLSortingController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58367717DE53A2006B062E /* TJLSortingController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		DB58366517DE3D33006B062E /* TJLSortingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TJLSortingTests-Info.plist"; sourceTree = "<group>"; };
 		DB58366717DE3D33006B062E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB58366917DE3D33006B062E /* TJLSortingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TJLSortingTests.m; sourceTree = "<group>"; };
+		DB58367317DE3D55006B062E /* TJLSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLSorter.h; sourceTree = "<group>"; };
+		DB58367417DE3D55006B062E /* TJLSorter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLSorter.m; sourceTree = "<group>"; };
+		DB58367617DE53A2006B062E /* TJLSortingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLSortingController.h; sourceTree = "<group>"; };
+		DB58367717DE53A2006B062E /* TJLSortingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLSortingController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,10 @@
 				DB58365417DE3D33006B062E /* TJLViewController.m */,
 				DB58365617DE3D33006B062E /* Images.xcassets */,
 				DB58364517DE3D33006B062E /* Supporting Files */,
+				DB58367317DE3D55006B062E /* TJLSorter.h */,
+				DB58367417DE3D55006B062E /* TJLSorter.m */,
+				DB58367617DE53A2006B062E /* TJLSortingController.h */,
+				DB58367717DE53A2006B062E /* TJLSortingController.m */,
 			);
 			path = TJLSorting;
 			sourceTree = "<group>";
@@ -253,6 +263,8 @@
 				DB58365517DE3D33006B062E /* TJLViewController.m in Sources */,
 				DB58364B17DE3D33006B062E /* main.m in Sources */,
 				DB58364F17DE3D33006B062E /* TJLAppDelegate.m in Sources */,
+				DB58367817DE53A2006B062E /* TJLSortingController.m in Sources */,
+				DB58367517DE3D55006B062E /* TJLSorter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
