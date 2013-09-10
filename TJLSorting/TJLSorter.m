@@ -25,15 +25,15 @@
     return arr;
 }
 
--(NSArray*)quickSort:(NSArray*)unsortedArray {
-    NSInteger numberOfElements = unsortedArray.count;
-    if(numberOfElements <= 1) return unsortedArray;
+-(NSArray*)quickSort:(NSArray*)array {
+    NSInteger numberOfElements = array.count;
+    if(numberOfElements <= 1) return array;
     
     NSMutableArray* lessArray = [[NSMutableArray alloc] initWithCapacity:numberOfElements];
     NSMutableArray* moreArray = [[NSMutableArray alloc] initWithCapacity:numberOfElements];
     
-    id pivotValue = [unsortedArray objectAtIndex:arc4random_uniform((u_int32_t)numberOfElements)];
-    for (id value in unsortedArray) {
+    id pivotValue = [array objectAtIndex:arc4random_uniform((u_int32_t)numberOfElements)];
+    for (id value in array) {
         if([value floatValue] < [pivotValue floatValue]){
             [lessArray addObject:value];
         } else if([value floatValue] > [pivotValue floatValue]){
@@ -53,7 +53,7 @@
     NSInteger i;
     for(NSInteger j = 1; j< array.count; j++) {
         id key = [array objectAtIndex:j];
-        i  = j - 1;
+        i = j - 1;
         while (i >= 0 && [[array objectAtIndex:i] compare:key] != NSOrderedAscending) {
             [array replaceObjectAtIndex:i + 1 withObject:[array objectAtIndex:i]];
             i= i - 1;
@@ -64,7 +64,7 @@
 }
 
 -(NSArray *)mergeSort:(NSArray *)array {
-    if (array.count < 2) return array;
+    if (array.count <= 1) return array;
     
     NSUInteger middle = array.count / 2;
     NSRange left = NSMakeRange(0, middle);
@@ -74,23 +74,23 @@
     return [self merge:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]];
 }
 
--(NSArray *)merge:(NSArray *)leftArr andRight:(NSArray *)rightArr {
+-(NSArray *)merge:(NSArray *)leftArray andRight:(NSArray *)rightArray {
     NSMutableArray *result = [NSMutableArray new];
     NSInteger right = 0;
     NSInteger left = 0;
     
-    while (left < leftArr.count && right < rightArr.count) {
-        if ([[leftArr objectAtIndex:left] compare:[rightArr objectAtIndex:right]] != NSOrderedDescending){
-            [result addObject:[leftArr objectAtIndex:left++]];
+    while (left < leftArray.count && right < rightArray.count) {
+        if ([[leftArray objectAtIndex:left] compare:[rightArray objectAtIndex:right]] != NSOrderedDescending){
+            [result addObject:[leftArray objectAtIndex:left++]];
         }
         else {
-            [result addObject:[rightArr objectAtIndex:right++]];
+            [result addObject:[rightArray objectAtIndex:right++]];
         }
     }
-    NSRange leftRange = NSMakeRange(left, (leftArr.count - left));
-    NSRange rightRange = NSMakeRange(right, (rightArr.count - right));
-    NSArray *newRight = [rightArr subarrayWithRange:rightRange];
-    NSArray *newLeft = [leftArr subarrayWithRange:leftRange];
+    NSRange leftRange = NSMakeRange(left, (leftArray.count - left));
+    NSRange rightRange = NSMakeRange(right, (rightArray.count - right));
+    NSArray *newRight = [rightArray subarrayWithRange:rightRange];
+    NSArray *newLeft = [leftArray subarrayWithRange:leftRange];
     newLeft = [result arrayByAddingObjectsFromArray:newLeft];
     return [newLeft arrayByAddingObjectsFromArray:newRight];
 }
